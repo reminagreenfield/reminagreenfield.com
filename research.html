@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remina Greenfield</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- DESKTOP NAV-->
+    <nav>
+        <ul>
+            <li><a href="/">Remina Greenfield</a></li>
+            <li><a href="/">Projects</a></li>
+            <li class="em"><a href="/">Research</a></li>
+            <li><a href="/">Teaching</a></li>
+            <li><a href="/">Writing</a></li>
+        </ul>
+    </nav>
+    <!-- MOBILE NAV-->
+    <nav id="mobile">
+        <a href="/">Remina Greenfield</a>
+        <div id="mobile-nav-trigger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="/">Home/About</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Research</a></li>
+            <li><a href="/">Teaching</a></li>
+            <li><a href="/">Writing</a></li>
+        </ul>
+    </nav>
+    <!-- MAIN PAGE CONTENT-->
+    <main>
+        <div class="spacer"></div>
+        <div>
+            <ul>
+                <li>Dapibus Lorem Egestas Vehicula</li>
+                <li>Ridiculus Inceptos Ultricies Pellentesque Consectetur</li>
+                <li>Cursus Vulputate</li>
+                <li>Sollicitudin Tellus Ridiculus Venenatis</li>
+                <li>Ridiculus Dapibus</li>
+            </ul>
+        </div>
+        <div>
+            Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer>remina.greenfield<br>@gmail.com</footer>
+    <!-- JAVASCRIPT FOR MOBILE NAV -->
+    <script>
+        document.getElementById("mobile-nav-trigger").addEventListener("click", function(){
+            if(this.closest("#mobile").classList.contains('open')){
+                this.closest("#mobile").classList.remove('open');
+            }else{
+                this.closest("#mobile").classList.add('open');
+            }
+        })
+    </script>
+</body>
+</html>
