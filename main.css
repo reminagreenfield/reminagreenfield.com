@@ -64,7 +64,7 @@ main > div:first-child{
 }
 
 main > div:nth-child(2){
-    flex-basis: 25%;
+    flex-basis: 15%;
 }
 main > div:nth-child(2) ul{
     padding:0;
@@ -77,7 +77,8 @@ main > div:nth-child(2) ul li{
 main > div:last-child{
     padding-right: 25px;
     padding-left:25px;
-    flex-basis: 60%;
+    flex-basis: 70%;
+    padding-left:5%;
 }
 main > div > *:first-child{
     margin-top:0;
