@@ -123,6 +123,7 @@ p{
     }
     main{
         flex-direction: column;
+        margin-top:50px;
     }
     main > div{
         margin:0 10px;
@@ -136,8 +137,9 @@ p{
     }
     nav#mobile{
         display: flex;
-        padding: 20px 10px;
-        width: calc(100% - 70px);
+        background-color: #f0f0f0;
+        padding: 10px 10px;
+        width: calc(100% - 0px);
         justify-content: space-between;
     }
     nav#mobile ul{
