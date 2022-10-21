@@ -1,3 +1,6 @@
+
+
+
 body{
     margin:0;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -12,7 +15,9 @@ a:link, a,a:visited{
 a:hover{
     font-style: italic;
 }
-
+h1,h2,h3,h4{
+    font-weight: normal;
+}
 /* Navigation */
 
 nav{
@@ -21,7 +26,8 @@ nav{
     top:0;
     left:0;
     padding: 8px 25px;
-    width: 15%;
+    padding-right:0;
+    width: auto;
 }
 nav ul{
     padding-left:0;
@@ -31,7 +37,7 @@ nav a{
     color:inherit;
     text-decoration: none;
 }
-nav li.em{
+nav li.em, li.on{
     font-style: italic;
 }
 nav li{
@@ -46,9 +52,10 @@ nav#mobile{
 /* footer */
 footer{
     margin-top:100px;
-    margin-left:25px;
+    padding-right:25px;
     margin-bottom:25px;
-    width:15%;
+    width:calc(100% - 25px);
+    text-align: right;
 }
 /* Content */
 
@@ -58,6 +65,9 @@ main{
     margin:0;
     width: 100%;
     margin-top:80px;
+}
+#home main > div:last-child{
+    flex-basis: 60%;
 }
 main > div:first-child{
     flex-basis: 15%; 
@@ -70,9 +80,19 @@ main > div:nth-child(2) ul{
     padding:0;
     list-style: none;
     margin:0;
+    position: fixed;
+    max-width: 15%;
 }
 main > div:nth-child(2) ul li{ 
     margin-bottom:10px;
+    cursor: pointer;
+}
+main > div:nth-child(2) ul li a{
+    color:inherit;
+    text-decoration: none;
+}
+main > div:nth-child(2) ul li:hover{
+    font-style: italic;
 }
 main > div:last-child{
     padding-right: 25px;
@@ -101,6 +121,64 @@ p{
 .two-column > *{
     width: calc(50% - 25px);
 }
+/* COLOR CHANGES FOR SUB-PAGES */
+/*
+COLORS:
+Projects Green #838027
+Research Pink #B54842
+Teaching Orange #E85726
+Writing Purple #481A62
+Yellow #F2B770
+*/
+nav li:nth-child(2):hover{
+    color: #838027;
+}
+nav li:nth-child(3):hover{
+    color: #B54842;
+}
+nav li:nth-child(4):hover{
+    color: #E85726;
+}
+nav li:nth-child(5):hover{
+    color: #481A62;
+}
+
+#projects nav li.em,#projects main > div > ul li.on,#projects main > div > h1:first-child, #projects main > div > ul li:hover{
+    color: #838027;
+}
+#research nav li.em,#research main > div > ul li.on,#research main > div > h1:first-child, #research main > div > ul li:hover{
+    color: #B54842;
+}
+#teaching nav li.em,#teaching main > div > ul li.on,#teaching main > div > h1:first-child, #teaching main > div > ul li:hover{
+    color: #E85726;
+}
+#writing nav li.em,#writing main > div > ul li.on,#writing main > div > h1:first-child, #writing main > div > ul li:hover{
+    color: #481A62;
+}
+
+#projects #back-to-top svg path{
+    fill: #838027;
+}
+#research #back-to-top svg path{
+    fill: #B54842;
+}
+#teaching #back-to-top svg path{
+    fill: #E85726;
+}
+#writing #back-to-top svg path{
+    fill: #481A62;
+}
+/********/
+/* MOLD */
+/********/
+
+#petri{
+    top:0;
+    left:0;
+    position: fixed;
+    pointer-events: none;
+    background-color: transparent;
+}
 
 /*************************/
 /* MOBILE/TABLET STYLING */
@@ -116,7 +194,16 @@ p{
         transform:scale(1);
     }
 }
-
+#back-to-top{
+    pointer-events: none;
+    opacity: 0;
+    margin:0;
+    padding:0;
+    width:0;
+    display: none;
+    height:0;
+    overflow: hidden;
+}
 @media(max-width:900px){
     body{
         font-size: 18px;
@@ -131,9 +218,31 @@ p{
     main > div:last-child{
         padding:0;
     }
+    #back-to-top{
+        position:fixed;
+        bottom:25px;
+        right:25px;
+        z-index: 9;
+        width:auto;
+        height:auto;
+        overflow: auto;
+        pointer-events: auto;
+        opacity: 1;
+        background-color: transparent;
+        outline: none;
+        border:none;
+    }
+    #back-to-top svg{
+        width: 65px;
+    }
     /* Navigation */
     nav{
         display: none;
+    }
+    main > div:nth-child(2) ul{
+        position:relative;
+        max-width:100%;
+        margin-bottom:25px;
     }
     nav#mobile{
         display: flex;
@@ -141,6 +250,7 @@ p{
         padding: 10px 10px;
         width: calc(100% - 0px);
         justify-content: space-between;
+        z-index: 99;
     }
     nav#mobile ul{
         display: none;
@@ -201,7 +311,10 @@ p{
     }
     /* FOOTER */
     footer{
-        margin-left:10px;
-        margin-bottom:10px;
+        padding-left:10px;
+        width: calc(100% - 10px);
+        padding-right:0;
+        margin-bottom:20px;
+        text-align: left;
     }
 }

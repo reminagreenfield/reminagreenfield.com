@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="home.css">
 </head>
-<body>
+<body id="home">
     <!-- DESKTOP NAV-->
     <nav>
         <ul>
@@ -20,6 +20,7 @@
         </ul>
     </nav>
     <!-- MOBILE NAV-->
+
     <nav id="mobile">
         <a href="/">Remina Greenfield</a>
         <!-- <div id="mobile-nav-trigger">
@@ -60,15 +61,13 @@
     </main>
     <!-- FOOTER -->
     <footer>remina.greenfield@gmail.com</footer>
-    <!-- JAVASCRIPT FOR MOBILE NAV -->
-    <script>
-        document.getElementById("mobile-nav-trigger").addEventListener("click", function(){
-            if(this.closest("#mobile").classList.contains('open')){
-                this.closest("#mobile").classList.remove('open');
-            }else{
-                this.closest("#mobile").classList.add('open');
-            }
-        })
-    </script>
+    <!-- mold container -->
+    <div id="petri"></div>
+     <!-- JAVASCRIPT FOR MOBILE NAV -->
+     <script src="./nav.js"></script>
+     <!-- P5 LIBRARY -->
+     <script src="./p5.min.js"></script>
+     <!-- MOLD -->
+     <script src="./mold.js"></script>
 </body>
 </html>
