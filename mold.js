@@ -44,10 +44,10 @@ function draw() {
     }
 
   }
-  if(play){
+  if(play && playCount <= spores.length){
     playCount += 1;
   }else if(playCount > 0){
-    playCount -= 1;
+    playCount -= 2;
   }
 
 }
