@@ -248,7 +248,7 @@ nav li:nth-child(5):hover{
         display: flex;
         background-color: #f0f0f0;
         padding: 10px 10px;
-        width: calc(100% - 0px);
+        width: calc(100% - 20px);
         justify-content: space-between;
         z-index: 99;
     }
@@ -258,35 +258,27 @@ nav li:nth-child(5):hover{
     #mobile-nav-trigger{
         position: relative;
         z-index: 9;
+        overflow: hidden;
     }
     #mobile-nav-trigger >div{
-        position: absolute;
-        width: 35px;
+        display: none;
+        padding: 0;
+    }
+
+    #mobile-nav-trigger >div:first-child{
+        width: 25px;
         animation-duration: 2.8s;
         mix-blend-mode: lighten;
-        animation-name: mold;
-        animation-iteration-count: infinite;
-        height:35px;
+        height:25px;
         background-color: #f0f0f0;
         border:1px solid #3D3A3D;
         border-radius: 100%;
         z-index: 9;
-
+        display: block;
     }
     
-    #mobile-nav-trigger >div:first-child{
-        top: 8px;
-        left:15px;
-        width: 30px;
-        animation-duration: 3s;
-        height:30px;
-    }
-    #mobile-nav-trigger >div:last-child{
-        top: -5px;
-        left:24px;
-        width: 20px;
-        height:20px;
-        animation-duration: 3.5s;
+    nav#mobile.open #mobile-nav-trigger > div{
+        background-color: #3D3A3D;
     }
     nav#mobile.open ul{
         display: block;
@@ -298,9 +290,10 @@ nav li:nth-child(5):hover{
         padding-bottom:25px;
         background-color: #f0f0f0;
     }
-    nav#mobile.open ul li, nav#mobile.open ul li:first-child{
-        margin-bottom: 20px;
+    nav#mobile li:first-child{
+        margin-bottom:10px;
     }
+
     /* MAIN CONTENT */
     img{
         margin-top:10px;
